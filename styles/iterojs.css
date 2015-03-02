@@ -1,0 +1,20 @@
+body { padding-top: 20px; padding-bottom: 20px; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.loading { background: url('spinner80.gif'); width: 80px; height: 80px; display: inline-block; vertical-align: middle; margin: 10px 20px 10px 0; }
+.header, .footer { padding-left: 15px; padding-right: 15px; }
+.header { border-bottom: 1px solid #e5e5e5; }
+.footer { padding-top: 19px; color: #777; border-top: 1px solid #e5e5e5; }
+.modal-dialog { max-width: 40em; }
+.widget-balance {
+    /*border: 1px solid #f0f0f0;
+    background: #fcfcff;*/
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px;
+    margin: 10px 0;
+}
+h3 { font-weight: 400; border-bottom: 1px solid #ccc; padding-top: 20px; }
