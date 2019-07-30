@@ -11,7 +11,7 @@
 			<thead>
 				<tr>
 					<th>Own Id</th>
-					<th>Itero Id</th>
+					<th>billwerk Id</th>
 					<th>Name</th>
 					<th>Created At</th>
 				</tr>

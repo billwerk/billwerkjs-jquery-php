@@ -12,7 +12,7 @@ $contractid = $json->ContractId;
 if ($event != 'AccountCreated')
 	handle_error(422,"Not an 'account created' event");
 
-//Fetch contract and customer data from Itero
+//Fetch contract and customer data from billwerk
 $itero = new IteroAPI($clientid, $clientsecret);
 
 if (!$itero)
@@ -42,7 +42,7 @@ $customer->contractid = $contractid;
 $c_customers = $db->customers;
 $c_customers->save($customer);
 
-//Get new id and pass it to Itero as external id  
+//Get new id and pass it to billwerk as external id  
 $ownId =  (string)$customer->_id;
 $customer->ExternalCustomerId = $ownId;
 $itero->put_customer($customer); 

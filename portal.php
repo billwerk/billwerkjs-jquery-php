@@ -6,7 +6,7 @@ include 'iteroapi.php';
 $contractid = $_GET['contractid'];
 
 // Get a default self service portal URL
-// from Itero for a sepcific contract
+// from billwerk for a specific contract
 $itero = new IteroAPI($clientid, $clientsecret);
 $token = $itero->get_selfservice_token($contractid);
 

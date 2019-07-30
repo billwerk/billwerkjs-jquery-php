@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>IteroJS Hello World - Pactas</title>
-        <script type="text/javascript" src="https://sandbox.pactas.com/selfService/iterojs"></script>  
+        <title>subscriptionJS Hello World - billwerk</title>
+        <script type="text/javascript" src="https://selfservice.sandbox.billwerk.com/subscription.js"></script>  
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript">
-            var signupService = new IteroJS.Signup();
-            var paymentService = new IteroJS.Payment({ publicApiKey: "5331a0751d8dd00c4466c9be", providerReturnUrl : "http://http://iterojsphp.cloudcontrolled.com/signup.php" },
-                function () { console.log("iteroJS payment is ready"); },
+            var signupService = new subscriptionJS.Signup();
+            var paymentService = new subscriptionJS.Payment({ publicApiKey: "5331a0751d8dd00c4466c9be", providerReturnUrl : "https://your_domain.com/your_finalize_page" },
+                function () { console.log("subscriptionJS payment is ready"); },
                 function () { alert("initialization failed!"); });
 
             $(function () {
@@ -16,7 +16,7 @@
                     // enforce HTML5 validation:
                     ev.target.checkValidity();
 
-                    // Create IteroJS DTOs from user input
+                    // Create subscriptionJS DTOs from user input
                     var cart = {
                         "planVariantId": "5331a2601d8dd00c4466c9d8", // SamplePlan M
                         "componentSubscriptions": []
@@ -59,7 +59,7 @@
         </style>
     </head>
     <body>
-        <h1>Hello IteroJS!</h1>
+        <h1>Hello subscriptionJS!</h1>
             <form id="form">
                 <input type="text" id="firstName" required placeholder="First Name"/><br />
                 <input type="text" id="lastName" required placeholder="Last Name"/><br />

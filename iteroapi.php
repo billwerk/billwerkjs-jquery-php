@@ -1,8 +1,8 @@
 <?php
 
 class IteroAPI {
-	static $oAuth = "https://sandbox.pactas.com/oauth/token";
-	static $iteroBase = "https://sandbox.pactas.com/api/v1/";
+	static $oAuth = "https://sandbox.billwerk.com/oauth/token";
+	static $iteroBase = "https://sandbox.billwerk.com/api/v1/";
 	static $contractResource = "contracts/";
 	static $customerResource = "customers/";
 	
@@ -11,7 +11,7 @@ class IteroAPI {
 		
 	function __construct($clientid,$secret)
 	{
-		//Get oauth token to access Itero API
+		//Get oauth token to access billwerk API
 		$verbose = fopen('php://stderr', 'w');		
 		$curl = curl_init();
 		$data = http_build_query(array(
@@ -35,17 +35,17 @@ class IteroAPI {
 		self::$auth = "Authorization: Bearer ".$token->access_token;
 	}
 	
-	// Fetch contract by id from Itero 
+	// Fetch contract by id from billwerk
 	public function get_contract($contractId) {
 		return $this->get(self::$contractResource.$contractId);		
 	}
 	
-	// Fetch customer by id from Itero 
+	// Fetch customer by id from billwerk
 	public function get_customer($customerId) {
 		return $this->get(self::$customerResource.$customerId);
 	}
 	
-	// Update customer data in Itero
+	// Update customer data in billwerk
 	public function put_customer($customer) {
 		return $this->put(self::$customerResource.$customer->Id,$customer);
 	}	
@@ -54,7 +54,7 @@ class IteroAPI {
 		return $this->get(self::$contractResource.$contractId."/selfServiceToken");
 	}
 	
-	// Itero API GET request 
+	// billwerk API GET request 
 	private function get($resource)
 	{
 		$curl = curl_init();
@@ -64,7 +64,7 @@ class IteroAPI {
 		return json_decode($response);
 	}
 	
-	// Itero API PUT request 
+	// billwerk API PUT request 
 	private function put($resource, $data)
 	{
 		$json = json_encode($data);
@@ -82,7 +82,7 @@ class IteroAPI {
 		return json_decode($response);
 	}
 
-	// Execute Itero API request 
+	// Execute billwerk API request 
 	private function request($curl,$resource)
 	{
 		$verbose = fopen('php://stderr', 'w');
